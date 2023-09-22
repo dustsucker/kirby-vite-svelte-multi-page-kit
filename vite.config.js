@@ -1,12 +1,17 @@
 import { globSync } from "glob";
 import { resolve } from "path";
 import kirby from "vite-plugin-kirby";
+import { svelte } from '@sveltejs/vite-plugin-svelte'
 
 const input = [
   'src/index.js',
   'src/index.css',
-  ...globSync("src/templates/*/index.{js,css}")
+  ...globSync("src/templates/*/index.{js,css,svelte}"),
+  ...globSync("src/**/*.svelte"),
 ].map((path) => resolve(process.cwd(), path))
+
+/*for debuging the input files if they are not working*/
+//console.log(input)
 
 export default ({ mode }) => ({
   root: "src",
@@ -22,5 +27,9 @@ export default ({ mode }) => ({
     rollupOptions: { input },
   },
 
-  plugins: [kirby()],
+  plugins: [svelte({
+    compilerOptions: {
+        customElement: true,
+    }
+  }),kirby()],
 });

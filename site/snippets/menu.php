@@ -1,9 +1,5 @@
-<nav>
-  <ul>
-    <?php foreach($site->children() as $child): ?>
-    <li>
-      <a href="<?= $child->url() ?>"><?= $child->title() ?></a>
-    </li>
-    <?php endforeach ?>
-  </ul>
-</nav>
+<!--defining webComponent and loading in the data as JSON String-->
+<navigation-element children='<?= $site->children()->toJson()?>'></navigation-element>
+
+<!--loading in the webComponent-->
+<?= vite()->js("snippets/menu/Nav.svelte", try: true) ?>

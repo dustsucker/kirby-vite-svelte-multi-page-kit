@@ -1,8 +1,8 @@
-# Kirby Vite Multi-Page Kit
+# Kirby Vite Svelte Multi-Page Kit
 
 ## Features
 
-- ⚡️ Uses [Vite](https://vitejs.dev/) with [kirby-vite](https://github.com/arnoson/kirby-vite) plugin
+- ⚡️ Uses [Vite](https://vitejs.dev/) with [kirby-vite](https://github.com/arnoson/kirby-vite) plugin and Svelte WebComponents
 - 📚 Multiple pages
 - 🔄 Live Reloading for Kirby templates, snippets, content, ... changes
 - 📂 [Public folder structure](https://getkirby.com/docs/guide/configuration#custom-folder-setup__public-folder-setup)
