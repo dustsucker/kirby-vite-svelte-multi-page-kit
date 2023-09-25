@@ -18,7 +18,7 @@ customElement={{
     <ul>
         {#each Object.keys(children) as childKey}
         <li>
-            <a href={children[childKey].url}>{children[childKey].content.title}</a>
+            <a class="text-green-500" href={children[childKey].url}>{children[childKey].content.title}</a>
         </li>
         {/each}
     </ul>

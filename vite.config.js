@@ -2,6 +2,7 @@ import { globSync } from "glob";
 import { resolve } from "path";
 import kirby from "vite-plugin-kirby";
 import { svelte } from '@sveltejs/vite-plugin-svelte'
+import tailwindConfig from "tailwindcss/stubs/tailwind.config.js";
 
 const input = [
   'src/index.js',
@@ -27,6 +28,14 @@ export default ({ mode }) => ({
     rollupOptions: { input },
   },
 
+  css: {
+    postcss: {
+      plugins: [
+        tailwindConfig,
+        autoprefixer,
+      ],
+    },
+  },
   plugins: [svelte({
     compilerOptions: {
         customElement: true,
